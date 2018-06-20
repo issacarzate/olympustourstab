@@ -86,4 +86,5 @@
         <variable name="APP_ID" value="1874593139221187" />
         <variable name="APP_NAME" value="Olympus Tours" />
     </plugin>
+    <engine name="ios" spec="4.5.4" />
 </widget>

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {ActionSheetController, IonicPage, NavController, NavParams} from 'ionic-angular';
+import {ActionSheetController, NavController, NavParams} from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 
 import { AngularFireAuth } from 'angularfire2/auth';

@@ -18,6 +18,8 @@ export class TabsPage {
   tab2Root = AboutPage;
   tab3Root = ContactPage;
 
+  color: string = "primary";
+
   constructor(public navCtrl: NavController, public storage: Storage) {
 
   }
@@ -26,7 +28,14 @@ export class TabsPage {
     if (!done) {
       this.storage.set('intro-done', true);
       this.navCtrl.setRoot(IntroPage);
-    }
-  });
-}
+      }
+   });
+  }
+  selectInformation(){
+    this.color = "secondary";
+  }
+
+  selectContact(){
+    this.color = "danger";
+  }
 }

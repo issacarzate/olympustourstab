@@ -19,7 +19,7 @@ export class IntroPage {
   slides:any[] = [
     {
       title: "Bienvenido!!!",
-      description: "Esta <b>aplicación</b> hará tu viaje muchp más fácil!",
+      description: "Esta <b>aplicación</b> hará tu viaje mucho más fácil!",
       image: "assets/img/ica-slidebox-img-1.png",
     },
     {

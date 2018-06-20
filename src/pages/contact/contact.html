@@ -13,26 +13,28 @@
     <ion-title>Promociones</ion-title>
   </ion-navbar>
 </ion-header>
-<ion-content padding text-center no-bounce>
+<ion-content padding text-center no-bounce class="vertical-align-content" >
 
   <ion-grid>
     <ion-row>
       <ion-col class="top-20">
-        <img src="./assets/imgs/app-logo.png">
+        <ion-icon color="light" name="logo-facebook" class="ion-iconF"></ion-icon>
       </ion-col>
     </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <button (click)="signInWithFacebook()" ion-button color="light" icon-left block outline>
+           Log in with Facebook
+        </button>
+      </ion-col>
+    </ion-row>
+
     <ion-row>
       <ion-col class="top-20">
         <h3>
           Inicia sesión para que recibas una oferta exclusiva!
         </h3>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col>
-        <button (click)="signInWithFacebook()" ion-button color="facebook" icon-left block>
-          <ion-icon name="logo-facebook"> Facebook</ion-icon>
-        </button>
       </ion-col>
     </ion-row>
 
