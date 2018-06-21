@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import {InAppBrowser, InAppBrowserOptions} from "@ionic-native/in-app-browser";
+import {ContactoPage} from "../contacto/contacto";
 
 @Component({
   selector: 'page-home',
@@ -82,9 +83,9 @@ export class HomePage {
   constructor(public navCtrl: NavController, private iab: InAppBrowser) {
 
   }
-
-
-
+  contactar(){
+    this.navCtrl.push(ContactoPage);
+  }
 
   abrirEnlace(enlace:string){
     //Opciones para abrir el link
