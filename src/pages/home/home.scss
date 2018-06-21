@@ -1,46 +1,32 @@
 page-home {
-    ion-card {
-      position: absolute !important;
-      top: 2%;
-      text-align: center;
-      height: 27.5%;
-    }
 
-    .card-title {
-      position: absolute;
-      top: 36%;
-      left: 4%;
-      font-size: 2.0em;
-      font-weight: bold;
-      color: #fff;
-    }
 
-    .card-subtitle {
-      font-size: 1.0em;
-      position: absolute;
-      top: 54%;
-      left: 4%;
-      color: #fff;
-    }
+  .box{
+    height: 100%;
+  }
+  ion-slides{
+    height: 30vh !important;
+    padding: 2%;
+  }
 
-    .card-img{
-      position: absolute;
-      width: 100%;
-      height: 100%;
-    }
+  .slider-pager-page {
+    color: white !important;
+  }
 
-    .titulo-tours{
-      position: absolute;
-      color: orangered;
-      top: 35%;
-      font-size: x-large;
-      font-weight: bold;
-      left: 2%;
-    }
+  .swiper-pagination-bullet {
+    background: map-get($colors, textHighlight) !important;
+    margin: 0 3px;
+  }
 
-  .grid-basic-page {
-    position: absolute;
-    top: 40%;
+  .titulo-tours{
+    position: relative;
+    color: map-get($colors, textHighlight);
+    font-size: large;
+    font-weight: bold;
+    left: 3%;
+    top: -1%;
+    margin-bottom: -1%;
+  }
 
     h5{
       margin-top: 1%;
@@ -49,21 +35,17 @@ page-home {
     }
 
     p{
-      margin-bottom: 1%;
+      margin-bottom: -1%;
+      margin-top: -1%;
       color: map-get($colors, textHighlight);
     }
 
-    img .square-img{
-
-      object-fit: cover;
-      margin-top: 20%;
-    }
-
     ion-col div {
-      background-color: #f0f5ff;
+      /*background-color: #f0f5ff;
       border: 1px solid #e6e9ee;
-      border-radius: 2px;
-      padding: 5px;
+      border-radius: 2px;*/
+      padding: 1px;
+      margin-top: -3%;
     }
-  }
+
 }

@@ -23,6 +23,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 //Cordova
 import { Facebook } from '@ionic-native/facebook';
 import { CallNumber } from "@ionic-native/call-number";
+import {InAppBrowser} from "@ionic-native/in-app-browser";
 
 export const firebaseConfig = {
   apiKey: "AIzaSyA2QCVwtr298TPcop6wK0gBShMylWnvWIc",
@@ -69,6 +70,7 @@ export const firebaseConfig = {
     CallNumber,
     IonicStorageModule,
     UsuarioProvider,
+    InAppBrowser,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
