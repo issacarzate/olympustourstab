@@ -8,15 +8,6 @@ import {ContactoPage} from "../contacto/contacto";
   templateUrl: 'home.html'
 })
 export class HomePage {
-
-  galleryType = 'regular';
-
-  bgColors:any = [
-    "bgColor_1", "bgColor_2", "bgcolor_3", "bgColor_4", "bgColor_5", "bgColor_6", "bgColor_7", "bgColor_8", "bgColor_9"
-  ];
-  currentPage = 0;
-
-
   slides:any[] = [
     {
       title: "Xel-Ha",
@@ -31,7 +22,7 @@ export class HomePage {
     {
       title: "Tulum",
       subtitle: "Ida y vuelta",
-      image: "https://lh3.googleusercontent.com/proxy/jD34r9DN39g_LoPKRgeM6JQQpZPhpUZGutoXq8ey-XwQRoaimj32yRZ1yhoz7DgKhepRDH-KQxXMqo6_O1299Fb1KvPSz3ffW7jog_m0h_VdRQHsSjaTCqlgMkLQVdwjALj23ddN5S-tNgaLFHRW1Ly-_x0=w539-h360-k-no",
+      image: "https://blog.olympus-tours.com/wp-content/uploads/2018/06/Arenal-Volcano-e1528740079994.jpg",
     }
   ];
 
@@ -73,7 +64,7 @@ export class HomePage {
       url: "https://google.com"
     },
     {
-      image: "https://lh3.googleusercontent.com/proxy/jD34r9DN39g_LoPKRgeM6JQQpZPhpUZGutoXq8ey-XwQRoaimj32yRZ1yhoz7DgKhepRDH-KQxXMqo6_O1299Fb1KvPSz3ffW7jog_m0h_VdRQHsSjaTCqlgMkLQVdwjALj23ddN5S-tNgaLFHRW1Ly-_x0=w539-h360-k-no",
+      image: "https://blog.olympus-tours.com/wp-content/uploads/2018/06/Arenal-Volcano-e1528740079994.jpg",
       place: "Costa Rica",
       tour: "Jungle Tour",
       url: "https://google.com"

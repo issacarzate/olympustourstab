@@ -14,9 +14,9 @@ import { Storage } from '@ionic/storage';
 })
 export class TabsPage {
 
-  tab1Root = HomePage;
-  tab2Root = AboutPage;
-  tab3Root = ContactPage;
+  intinerario = AboutPage ;
+  tours = HomePage;
+  promociones = ContactPage;
 
   color: string = "primary";
 

@@ -24,6 +24,8 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { Facebook } from '@ionic-native/facebook';
 import { CallNumber } from "@ionic-native/call-number";
 import {InAppBrowser} from "@ionic-native/in-app-browser";
+import {ContactoPage} from "../pages/contacto/contacto";
+import {SocialSharing} from "@ionic-native/social-sharing";
 
 export const firebaseConfig = {
   apiKey: "AIzaSyA2QCVwtr298TPcop6wK0gBShMylWnvWIc",
@@ -42,7 +44,8 @@ export const firebaseConfig = {
     HomePage,
     TabsPage,
     PromocionesPage,
-    IntroPage
+    IntroPage,
+    ContactoPage
   ],
   imports: [
     BrowserModule,
@@ -60,7 +63,8 @@ export const firebaseConfig = {
     HomePage,
     TabsPage,
     PromocionesPage,
-    IntroPage
+    IntroPage,
+    ContactoPage
   ],
   providers: [
     StatusBar,
@@ -71,6 +75,7 @@ export const firebaseConfig = {
     IonicStorageModule,
     UsuarioProvider,
     InAppBrowser,
+    SocialSharing,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

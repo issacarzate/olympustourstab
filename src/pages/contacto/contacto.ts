@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {IonicPage, NavController, NavParams} from 'ionic-angular';
+import {CallNumber} from "@ionic-native/call-number";
+import {InAppBrowser, InAppBrowserOptions} from '@ionic-native/in-app-browser';
 
 /**
  * Generated class for the ContactoPage page.
@@ -14,12 +16,40 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'contacto.html',
 })
 export class ContactoPage {
+  numeros:any[] = [
+    {
+      bandera: "🇵🇹",
+      nombre: "Cancun Central",
+      numero: "5566778899",
+      whatsapp: "5215517040392"
+    },
+    {
+      bandera: "🇵🇷",
+      nombre: "San Juan",
+      numero: "55881122",
+      whatsapp: "5215517040392"
+    }
+  ];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+              private callNumber: CallNumber, private  iab: InAppBrowser) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ContactoPage');
   }
 
+  llamada(numeroLlamada:string){
+    this.callNumber.callNumber(numeroLlamada, true)
+      .then(res => console.log('Launched dialer!', res))
+      .catch(err => console.log('Error launching dialer', err));
+    console.log('Archive clicked');
+  }
+
+  whatsapp(whatsNumero:string){
+        const options: InAppBrowserOptions = {
+          zoom: 'no'
+        };
+        this.iab.create('https://api.whatsapp.com/send?phone='+whatsNumero+'&text=Necesito informes', '_self', options);
+    }
 }
