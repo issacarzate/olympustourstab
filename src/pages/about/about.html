@@ -1,16 +1,40 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      About
+      Intinerario
     </ion-title>
     <ion-buttons right>
-      <button ion-button right (click)="callWhats()">
+      <button ion-button right (click)="contactar()">
         <ion-icon name="call"></ion-icon>
       </button>
     </ion-buttons>
   </ion-navbar>
 </ion-header>
 
-<ion-content no-bounce padding>
+<ion-content no-bounce>
+  <div class="contenido-principal">
+  <span class="main-title">¿Which Country Are You Visiting?  </span>
+
+  <ion-grid>
+    <ion-row class="pais-titulo-primero">
+      <ion-grid (click)="seleccionarPais('Rep Dom')">
+        <ion-row class="bandera-titulo"><img class="slide-image" src="assets/flags/repdom.png"></ion-row>
+        <ion-row class="pais-titulo-segundo" >Rep. Dom.</ion-row>
+      </ion-grid>
+    </ion-row>
+    <ion-row class="pais-titulo-primero">
+      <ion-grid (click)="seleccionarPais('Mexico')">
+        <ion-row class="bandera-titulo"><img class="slide-image" src="assets/flags/mexico.png"></ion-row>
+        <ion-row  class="pais-titulo-segundo">Rep. Dom.</ion-row>
+      </ion-grid>
+    </ion-row>
+    <ion-row class="pais-titulo-primero">
+      <ion-grid (click)="seleccionarPais('Costa Rica')">
+        <ion-row class="bandera-titulo"><img class="slide-image" src="assets/flags/costarica.png"></ion-row>
+        <ion-row  class="pais-titulo-segundo">Rep. Dom.</ion-row>
+      </ion-grid>
+    </ion-row>
+  </ion-grid>
+  </div>
 
 </ion-content>

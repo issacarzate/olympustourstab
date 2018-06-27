@@ -19,6 +19,7 @@ import { UsuarioProvider } from '../providers/usuario/usuario';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
 
 //Cordova
 import { Facebook } from '@ionic-native/facebook';
@@ -26,6 +27,13 @@ import { CallNumber } from "@ionic-native/call-number";
 import {InAppBrowser} from "@ionic-native/in-app-browser";
 import {ContactoPage} from "../pages/contacto/contacto";
 import {SocialSharing} from "@ionic-native/social-sharing";
+import {DestinationsPage} from "../pages/destinations/destinations";
+
+//Providers
+import { DestinationsProvider } from '../providers/destinations/destinations';
+import { HttpClientModule } from "@angular/common/http";
+import {DestinationsCitiesPage} from "../pages/destinations-cities/destinations-cities";
+import * as firebase from "firebase";
 
 export const firebaseConfig = {
   apiKey: "AIzaSyA2QCVwtr298TPcop6wK0gBShMylWnvWIc",
@@ -35,6 +43,7 @@ export const firebaseConfig = {
   storageBucket: "sendi-9f11f.appspot.com",
   messagingSenderId: "238310976567"
 };
+firebase.initializeApp(firebaseConfig);
 
 @NgModule({
   declarations: [
@@ -45,7 +54,9 @@ export const firebaseConfig = {
     TabsPage,
     PromocionesPage,
     IntroPage,
-    ContactoPage
+    ContactoPage,
+    DestinationsPage,
+    DestinationsCitiesPage
   ],
   imports: [
     BrowserModule,
@@ -53,7 +64,9 @@ export const firebaseConfig = {
     IonicStorageModule.forRoot(),
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    HttpClientModule,
+    AngularFirestoreModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -64,7 +77,9 @@ export const firebaseConfig = {
     TabsPage,
     PromocionesPage,
     IntroPage,
-    ContactoPage
+    ContactoPage,
+    DestinationsPage,
+    DestinationsCitiesPage
   ],
   providers: [
     StatusBar,
@@ -76,6 +91,7 @@ export const firebaseConfig = {
     UsuarioProvider,
     InAppBrowser,
     SocialSharing,
+    DestinationsProvider,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

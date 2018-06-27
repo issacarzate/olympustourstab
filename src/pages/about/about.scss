@@ -1,3 +1,60 @@
 page-about {
 
+  .main-title{
+    position: absolute;
+    text-align: center;
+    color: map-get($colors, textHighlight);
+    font-weight: bold;
+    font-size: large;
+    width: 180px;
+    left: 50%;
+    margin: 1% 0 0 -90px;
+  }
+
+  ion-grid,
+  ion-row{
+    position: relative;
+    top: 15%;
+    align-items: center;
+
+  }
+
+  .pais-titulo-primero{
+    width: 100%;
+    margin-top: -10%;
+  }
+
+  .slide-image {
+    max-height: 110px;
+    margin-bottom: 2%;
+  }
+
+
+  .pais-titulo-segundo{
+    font-weight: bold;
+    font-size: x-large;
+    height: 60px;
+    margin-top: -5%;
+    margin-bottom: 10%;
+    border-bottom: 1px solid;
+
+    color: map-get($colors, textPrimary);
+  }
+
+  .contenido-principal{
+    height: 80%;
+  }
+
+  .headerClass{
+    align-content: center;
+    align-items: center;
+    align-self: center;
+    alignment: center;
+    font-size: x-large;
+
+  }
+  .bandera-titulo{
+    font-size: 100px;
+  }
+
 }

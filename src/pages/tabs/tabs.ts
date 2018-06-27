@@ -7,6 +7,7 @@ import { IntroPage } from '../intro/intro';
 import { HomePage } from '../home/home';
 
 import { Storage } from '@ionic/storage';
+import {DestinationsPage} from "../destinations/destinations";
 
 
 @Component({
@@ -17,6 +18,7 @@ export class TabsPage {
   intinerario = AboutPage ;
   tours = HomePage;
   promociones = ContactPage;
+  destinos = DestinationsPage;
 
   color: string = "primary";
 
