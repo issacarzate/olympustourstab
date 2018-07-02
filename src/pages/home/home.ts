@@ -23,6 +23,11 @@ export class HomePage {
       title: "Tulum",
       subtitle: "Ida y vuelta",
       image: "https://blog.olympus-tours.com/wp-content/uploads/2018/06/Arenal-Volcano-e1528740079994.jpg",
+    },
+    {
+      title: "Panama",
+      subtitle: "Ida y vuelta",
+      image: "https://www.olympus-tours.com/images/canopy-zipline.jpg",
     }
   ];
 

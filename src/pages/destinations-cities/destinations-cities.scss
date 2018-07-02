@@ -1,9 +1,11 @@
 page-destinations-cities {
+
   .card-background-page {
 
     ion-card {
       position: relative;
       text-align: center;
+      height: 4cm;
     }
 
     .card-title {
@@ -13,6 +15,12 @@ page-destinations-cities {
       width: 100%;
       font-weight: bold;
       color: #fff;
+    }
+
+    .imagenCiudad {
+      width:100%;
+      height:100%;
+      object-fit: cover;
     }
 
     .card-subtitle {

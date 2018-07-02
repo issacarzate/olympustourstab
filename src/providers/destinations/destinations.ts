@@ -1,8 +1,7 @@
 //import { HttpClient } from '@angular/common/http';
 //public http: HttpClient
 import { Injectable } from '@angular/core';
-import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
-import 'firebase/firestore'
+import {AngularFirestore, AngularFirestoreCollection} from 'angularfire2/firestore';
 import {Observable} from "rxjs/Observable";
 
 /*
@@ -14,10 +13,12 @@ import {Observable} from "rxjs/Observable";
 @Injectable()
 export class DestinationsProvider {
 
-  countriesCollection: AngularFirestoreCollection<Country>;
-  countries: Observable<Country[]>;
 
-  private country:Country[] = [];
+  countriesCollection: AngularFirestoreCollection<Country>;
+  citiesCollection: AngularFirestoreCollection<City>;
+  //country: Observable<Country[]>;
+
+  //private country:Country[] = [];
   /*private countries:Country[]=[
     {
     name: 'Mexico',
@@ -36,7 +37,12 @@ export class DestinationsProvider {
     },
   ];*/
 
+//  constructor(private afs:AngularFirestore) {
   constructor(private afs:AngularFirestore) {
+
+    this.countriesCollection = this.afs.collection('countriesColleciton');
+    //this.country = this.countriesCollection.valueChanges();
+
     //FireDb.settings({ timestampsInSnapshots: true });
     /*
     db.collection('countriesColleciton').add({
@@ -48,21 +54,24 @@ export class DestinationsProvider {
     }).catch((error)=>{
       console.log(error);
     });*/
+    console.log('cargado totalmente');
   }
 
   getCountry(index:number){
-    return this.country[index];
+    //return this.country[index];
   }
-  getDbCities(){
-    this.countriesCollection = this.afs.collection('countriesColleciton'); //Referencia
-    this.countries = this.countriesCollection.valueChanges(); //Observable de los datos
-    return this.countries
+  getDbCities(coutryName:string){
+    this.citiesCollection = this.afs.collection('Cities', ref => ref.where('country', '==', coutryName));
+
+   // this.countriesCollection = this.afs.collection('countriesColleciton'); //Referencia
+   // this.countries = this.countriesCollection.valueChanges(); //Observable de los datos
+    //return this.countries
   }
   getCountries(){
-    return this.countries;
+    //return this.countries;
   }
   addCountry(country:Country){
-    this.country.push(country);
+    //this.country.push(country);
   }
 
 }
@@ -72,4 +81,17 @@ export interface Country{
   cities:string[];
   image:string;
   name:string;
+  id?: string;
+}
+export interface City{
+  cities:string[];
+  country:string;
+  images:string[];
+  id?: string;
+}
+export interface Tour{
+  cities:string[];
+  country:string;
+  images:string[];
+  id?: string;
 }

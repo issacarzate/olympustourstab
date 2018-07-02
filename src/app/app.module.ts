@@ -11,6 +11,8 @@ import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { IntroPage } from '../pages/intro/intro';
 import { PromocionesPage } from '../pages/promociones/promociones';
+import {DestinationsCitiesPage} from "../pages/destinations-cities/destinations-cities";
+import {DestinationsInfoPage} from "../pages/destinations-info/destinations-info";
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -32,8 +34,6 @@ import {DestinationsPage} from "../pages/destinations/destinations";
 //Providers
 import { DestinationsProvider } from '../providers/destinations/destinations';
 import { HttpClientModule } from "@angular/common/http";
-import {DestinationsCitiesPage} from "../pages/destinations-cities/destinations-cities";
-import * as firebase from "firebase";
 
 export const firebaseConfig = {
   apiKey: "AIzaSyA2QCVwtr298TPcop6wK0gBShMylWnvWIc",
@@ -43,7 +43,7 @@ export const firebaseConfig = {
   storageBucket: "sendi-9f11f.appspot.com",
   messagingSenderId: "238310976567"
 };
-firebase.initializeApp(firebaseConfig);
+//firebase.initializeApp(firebaseConfig);
 
 @NgModule({
   declarations: [
@@ -56,7 +56,8 @@ firebase.initializeApp(firebaseConfig);
     IntroPage,
     ContactoPage,
     DestinationsPage,
-    DestinationsCitiesPage
+    DestinationsCitiesPage,
+    DestinationsInfoPage
   ],
   imports: [
     BrowserModule,
@@ -79,7 +80,8 @@ firebase.initializeApp(firebaseConfig);
     IntroPage,
     ContactoPage,
     DestinationsPage,
-    DestinationsCitiesPage
+    DestinationsCitiesPage,
+    DestinationsInfoPage
   ],
   providers: [
     StatusBar,

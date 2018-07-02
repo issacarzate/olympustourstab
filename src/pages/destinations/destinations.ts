@@ -17,26 +17,19 @@ import {Observable} from "rxjs/Observable";
   templateUrl: 'destinations.html',
 })
 export class DestinationsPage {
+  //countries: Observable<Country[]>;
   countries: Observable<Country[]>;
-  country:Country[] = [
-    {
-      name:'',
-      image:'',
-      cities:[]
-    }
-  ];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private _destinationsProvider:DestinationsProvider) {
-    this.countries = this._destinationsProvider.getDbCities();
+    this.countries = this._destinationsProvider.countriesCollection.valueChanges();
   }
 
   ionViewDidLoad() {
+    console.log(this.countries);
   }
 
-  elegirPais(pais:Country){
-    this.country[0].name=pais.name;
-    this.country[0].cities=pais.cities;
-    this._destinationsProvider.addCountry(this.country[0]);
+  elegirPais(countryName:string){
+    this._destinationsProvider.getDbCities(countryName);
     this.navCtrl.push(DestinationsCitiesPage);
   }
 

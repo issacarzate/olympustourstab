@@ -13,8 +13,11 @@
 </ion-header>
 
 
-<ion-content padding>
-  <ion-card *ngFor="let city of cities">
-    <div class="card-title" [innerHTML]="city"></div>
-  </ion-card>
+<ion-content  class="card-background-page" padding>
+  <div *ngFor="let images of cities | async">
+    <ion-card *ngFor="let image of images['images']; let i = index ">
+      <img class="imagenCiudad" [src]="image" (click)="elegirCiudad()"/>
+      <div class="card-title" [innerHTML]="images.cities[i]"></div>
+    </ion-card>
+  </div>
 </ion-content>

@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import {DestinationsProvider} from "../../providers/destinations/destinations";
+import {City, Country, DestinationsProvider} from "../../providers/destinations/destinations";
+import {Observable} from "rxjs/Observable";
+import {DestinationsInfoPage} from "../destinations-info/destinations-info";
 
 /**
  * Generated class for the DestinationsCitiesPage page.
@@ -15,14 +17,18 @@ import {DestinationsProvider} from "../../providers/destinations/destinations";
   templateUrl: 'destinations-cities.html',
 })
 export class DestinationsCitiesPage {
-  cities:string[] = [];
+  cities: Observable<City[]>;
+  imagesDevice:any[];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private _destinationsProvider:DestinationsProvider) {
-    this.cities = this._destinationsProvider.getCountry(0).cities;
+    this.cities = this._destinationsProvider.citiesCollection.valueChanges();
   }
 
   ionViewDidLoad() {
-    console.log(this.cities)
+    console.log(this.cities.forEach(images => console.log('hola')))
+  }
+  elegirCiudad(){
+    this.navCtrl.push(DestinationsInfoPage);
   }
 
 }

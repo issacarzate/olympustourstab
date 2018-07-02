@@ -9,13 +9,10 @@
 
 <ion-content class="card-background-page">
 
-  <ion-card *ngFor="let country of countries">
-    <img [src]="country.image" (click)="elegirPais(this.country)"/>
+  <ion-card *ngFor="let country of countries | async ">
+    <img [src]="country.image" (click)="elegirPais(country.name)"/>
     <div class="card-title" [innerHTML]="country.name"></div>
   </ion-card>
-
-  <button ion-button (click)="addFire()">Add</button>
-
 
 <!--
   <ion-card>
