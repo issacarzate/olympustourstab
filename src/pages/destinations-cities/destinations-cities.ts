@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import {City, Country, DestinationsProvider} from "../../providers/destinations/destinations";
+import {City, DestinationsProvider} from "../../providers/destinations/destinations";
 import {Observable} from "rxjs/Observable";
 import {DestinationsInfoPage} from "../destinations-info/destinations-info";
 
@@ -27,8 +27,8 @@ export class DestinationsCitiesPage {
   ionViewDidLoad() {
     console.log(this.cities.forEach(images => console.log('hola')))
   }
-  elegirCiudad(){
+  elegirCiudad(cityName:string){
+    this._destinationsProvider.getDbTours(cityName);
     this.navCtrl.push(DestinationsInfoPage);
   }
-
 }

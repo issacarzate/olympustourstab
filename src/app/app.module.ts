@@ -30,6 +30,7 @@ import {InAppBrowser} from "@ionic-native/in-app-browser";
 import {ContactoPage} from "../pages/contacto/contacto";
 import {SocialSharing} from "@ionic-native/social-sharing";
 import {DestinationsPage} from "../pages/destinations/destinations";
+import {YoutubeVideoPlayer} from "@ionic-native/youtube-video-player";
 
 //Providers
 import { DestinationsProvider } from '../providers/destinations/destinations';
@@ -94,6 +95,7 @@ export const firebaseConfig = {
     InAppBrowser,
     SocialSharing,
     DestinationsProvider,
+    YoutubeVideoPlayer,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

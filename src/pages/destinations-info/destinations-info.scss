@@ -4,5 +4,15 @@ page-destinations-info {
     height: 4cm;
     object-fit: cover;
   }
+  .contenido{
+    color: map_get($colors, textVanished);
+  }
+
+  .titulo{
+    color: map-get($colors, textPrimary);
+  }
+  .chips{
+    color: map-get($colors, textPrimary);
+  }
 
 }

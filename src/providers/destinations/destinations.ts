@@ -2,7 +2,6 @@
 //public http: HttpClient
 import { Injectable } from '@angular/core';
 import {AngularFirestore, AngularFirestoreCollection} from 'angularfire2/firestore';
-import {Observable} from "rxjs/Observable";
 
 /*
   Generated class for the DestinationsProvider provider.
@@ -16,6 +15,7 @@ export class DestinationsProvider {
 
   countriesCollection: AngularFirestoreCollection<Country>;
   citiesCollection: AngularFirestoreCollection<City>;
+  toursCollection: AngularFirestoreCollection<Tour>;
   //country: Observable<Country[]>;
 
   //private country:Country[] = [];
@@ -67,6 +67,9 @@ export class DestinationsProvider {
    // this.countries = this.countriesCollection.valueChanges(); //Observable de los datos
     //return this.countries
   }
+  getDbTours(coutryName:string){
+    this.toursCollection = this.afs.collection('Tours', ref => ref.where('city', '==', coutryName));
+  }
   getCountries(){
     //return this.countries;
   }
@@ -90,8 +93,11 @@ export interface City{
   id?: string;
 }
 export interface Tour{
-  cities:string[];
-  country:string;
-  images:string[];
+  city:string;
+  title:string,
+  buyLink:string;
+  content:string;
+  videoId:string;
+  image:string;
   id?: string;
 }
