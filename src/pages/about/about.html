@@ -11,30 +11,47 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content no-bounce>
-  <div class="contenido-principal">
-  <span class="main-title">¿Which Country Are You Visiting?  </span>
+  <ion-content>
 
-  <ion-grid>
-    <ion-row class="pais-titulo-primero">
-      <ion-grid (click)="seleccionarPais('Rep Dom')">
-        <ion-row class="bandera-titulo"><img class="slide-image" src="assets/flags/repdom.png"></ion-row>
-        <ion-row class="pais-titulo-segundo" >Rep. Dom.</ion-row>
-      </ion-grid>
-    </ion-row>
-    <ion-row class="pais-titulo-primero">
-      <ion-grid (click)="seleccionarPais('Mexico')">
-        <ion-row class="bandera-titulo"><img class="slide-image" src="assets/flags/mexico.png"></ion-row>
-        <ion-row  class="pais-titulo-segundo">Rep. Dom.</ion-row>
-      </ion-grid>
-    </ion-row>
-    <ion-row class="pais-titulo-primero">
-      <ion-grid (click)="seleccionarPais('Costa Rica')">
-        <ion-row class="bandera-titulo"><img class="slide-image" src="assets/flags/costarica.png"></ion-row>
-        <ion-row  class="pais-titulo-segundo">Rep. Dom.</ion-row>
-      </ion-grid>
-    </ion-row>
-  </ion-grid>
-  </div>
+    <ion-slides #signupSlider >
 
-</ion-content>
+      <ion-slide>
+
+        <ion-list no-lines>
+
+          <form [formGroup]="slideOneForm">
+
+            <ion-item>
+              <ion-label floating>Full Name</ion-label>
+              <ion-input formControlName="fullname" type="text" [class.invalid]="!slideOneForm.controls.fullname.valid && (slideOneForm.controls.fullname.dirty || submitAttempt)"></ion-input>
+            </ion-item>
+
+           <!-- <ion-item>
+              <ion-label floating>Country</ion-label>
+              <ion-input formControlName="country" type="text" [class.invalid]="!slideOneForm.controls.country.valid && (slideOneForm.controls.bookingnumber.dirty || submitAttempt)"></ion-input>
+            </ion-item> -->
+
+            <ion-item>
+              <ion-label floating>Country</ion-label>
+              <ion-select formControlName="country">
+                <ion-option value="public" checked="true">Mexico</ion-option>
+                <ion-option value="friends">U.S.A</ion-option>
+                <ion-option value="private">Canada</ion-option>
+              </ion-select>
+            </ion-item>
+
+            <ion-item>
+              <ion-label floating>Booking Number</ion-label>
+              <ion-input formControlName="bookingnumber" type="number" [class.invalid]="!slideOneForm.controls.bookingnumber.valid && (slideOneForm.controls.bookingnumber.dirty || submitAttempt)"></ion-input>
+            </ion-item>
+
+          </form>
+
+        </ion-list>
+
+        <button ion-button round color="textHighlight" (click)="save()">Continue</button>
+
+      </ion-slide>
+    </ion-slides>
+
+  </ion-content>
