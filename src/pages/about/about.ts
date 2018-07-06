@@ -4,7 +4,6 @@ import {ContactoPage} from "../contacto/contacto";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 
 import { AgeValidator } from  '../../validators/age';
-import { UsernameValidator } from  '../../validators/username';
 @Component({
   selector: 'page-about',
   templateUrl: 'about.html'

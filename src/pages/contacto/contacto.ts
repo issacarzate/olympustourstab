@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {IonicPage, NavController, NavParams} from 'ionic-angular';
-import {CallNumber} from "@ionic-native/call-number";
+//import {CallNumber} from "@ionic-native/call-number";
 import {InAppBrowser, InAppBrowserOptions} from '@ionic-native/in-app-browser';
 
 /**
@@ -32,7 +32,8 @@ export class ContactoPage {
   ];
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
-              private callNumber: CallNumber, private  iab: InAppBrowser) {
+             // private callNumber: CallNumber,
+              private  iab: InAppBrowser) {
   }
 
   ionViewDidLoad() {
@@ -40,9 +41,9 @@ export class ContactoPage {
   }
 
   llamada(numeroLlamada:string){
-    this.callNumber.callNumber(numeroLlamada, true)
+    /*this.callNumber.callNumber(numeroLlamada, true)
       .then(res => console.log('Launched dialer!', res))
-      .catch(err => console.log('Error launching dialer', err));
+      .catch(err => console.log('Error launching dialer', err));*/
     console.log('Archive clicked');
   }
 

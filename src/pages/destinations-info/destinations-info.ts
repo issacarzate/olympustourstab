@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import {YoutubeVideoPlayer} from "@ionic-native/youtube-video-player";
+//import {YoutubeVideoPlayer} from "@ionic-native/youtube-video-player";
 import {DestinationsProvider, Tour} from "../../providers/destinations/destinations";
 import {Observable} from "rxjs/Observable";
 import {InAppBrowser, InAppBrowserOptions} from "@ionic-native/in-app-browser";
@@ -21,14 +21,14 @@ export class DestinationsInfoPage {
   tours: Observable<Tour[]>;
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
-              private youtube: YoutubeVideoPlayer,
+              //private youtube: YoutubeVideoPlayer,
               private _destinationsProvider:DestinationsProvider,
               private iab: InAppBrowser) {
     this.tours = this._destinationsProvider.toursCollection.valueChanges();
   }
 
   playVideo(videoID:string){
-    this.youtube.openVideo(videoID);
+    //this.youtube.openVideo(videoID);
   }
   abrirEnlace(enlace:string){
     //Opciones para abrir el link

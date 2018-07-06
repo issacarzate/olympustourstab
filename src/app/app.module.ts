@@ -25,12 +25,11 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 
 //Cordova
 import { Facebook } from '@ionic-native/facebook';
-import { CallNumber } from "@ionic-native/call-number";
 import {InAppBrowser} from "@ionic-native/in-app-browser";
 import {ContactoPage} from "../pages/contacto/contacto";
 import {SocialSharing} from "@ionic-native/social-sharing";
 import {DestinationsPage} from "../pages/destinations/destinations";
-import {YoutubeVideoPlayer} from "@ionic-native/youtube-video-player";
+//import {YoutubeVideoPlayer} from "@ionic-native/youtube-video-player";
 
 //Providers
 import { DestinationsProvider } from '../providers/destinations/destinations';
@@ -89,13 +88,12 @@ export const firebaseConfig = {
     SplashScreen,
     AngularFireDatabase,
     Facebook,
-    CallNumber,
     IonicStorageModule,
     UsuarioProvider,
     InAppBrowser,
     SocialSharing,
     DestinationsProvider,
-    YoutubeVideoPlayer,
+    //YoutubeVideoPlayer,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
