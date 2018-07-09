@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {Offer} from "../../providers/destinations/destinations";
+import {InAppBrowser, InAppBrowserOptions} from "@ionic-native/in-app-browser";
 
 /**
  * Generated class for the PromocionesPage page.
@@ -14,12 +16,37 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'promociones.html',
 })
 export class PromocionesPage {
+  offers:Offer[] = [
+    {
+      imageLink:"https://imagesmx-olympustours1.netdna-ssl.com/thumbnail.php?url=L2dhbGVyaWEvUFVOVEFDQU5BLVNXSU1XRE9MUEhJTlMxLTc3MFg0MDAuanBn&size=395x205",
+      title: "Sunset Cruise",
+      subtitle: "Los Cabos, Mexico",
+      content: "Discover the beauty of the Marietas Islands sailing from Nuevo Vallarta´s Marina. The Marietas Islands is a unique eco system with a huge diversity of tropical wildlife. During this 7 hour excursion in Puerto Vallarta you will be offered a variety of different activities.",
+      link: "https://www.olympus-tours.com/tours/puerto-vallarta/marieta-island-boat"
+    },
+    {
+      imageLink:"https://imagesmx-olympustours1.netdna-ssl.com/thumbnail.php?url=L2dhbGVyaWEvTWFyaW5hcml1bTUuanBn&size=395x205",
+      title: "Marinarium Snorkeling",
+      subtitle: "La Romana",
+      content: "Marinarium invites you to discover the wonders of the reef and the marine life. Join us for an exciting half-day excursion cruise during which you will have the unique opportunity to snorkel with stingrays and nurse sharks. Snorkeling is followed by a beautiful sightseeing cruise along the coast of Cabeza de Toro and Bavaro. Finally, you will reach Paradise, where you will relax in the waist deep waters of Bavaro’s natural pool, with your favorite cocktail in hand.\n" ,
+      link: "https://www.olympus-tours.com/tours/la-romana/marinarium-snorkeling-romana"
+    }
+  ];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private iab: InAppBrowser) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PromocionesPage');
+  }
+
+  navigateToOffer(linkToOffer:string){
+    const options: InAppBrowserOptions = {
+      zoom: 'no'
+    };
+
+    //Abrir la url
+    this.iab.create(linkToOffer, '_blank', options);
   }
 
 }

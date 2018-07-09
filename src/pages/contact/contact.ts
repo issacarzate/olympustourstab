@@ -10,7 +10,7 @@ import {IntroPage} from "../intro/intro";
 
 import { Platform } from 'ionic-angular';
 import { Facebook } from '@ionic-native/facebook';
-//import {CallNumber} from "@ionic-native/call-number";
+import {CallNumber} from "@ionic-native/call-number";
 
 
 @Component({
@@ -22,7 +22,7 @@ export class ContactPage {
   constructor(public navCtrl: NavController, public navParams: NavParams,
               private afAuth: AngularFireAuth,
               public storage: Storage,
-              //private callNumber: CallNumber,
+              private callNumber: CallNumber,
               public actionSheetCtrl: ActionSheetController,
               public usuarioProv: UsuarioProvider, private fb: Facebook, private platform: Platform) {
 
@@ -92,9 +92,9 @@ callWhats(){
       {
         text: 'Llamar',
         handler: () => {
-          /*this.callNumber.callNumber("+521557901692", true)
+          this.callNumber.callNumber("+521557901692", true)
             .then(res => console.log('Launched dialer!', res))
-            .catch(err => console.log('Error launching dialer', err));*/
+            .catch(err => console.log('Error launching dialer', err));
           console.log('Archive clicked');
         }
       },

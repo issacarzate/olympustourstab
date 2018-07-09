@@ -13,13 +13,26 @@
 
   <ion-content>
 
-    <ion-slides #signupSlider >
-
-      <ion-slide>
 
         <ion-list no-lines>
 
+          <ion-grid>
+            <ion-row>
+              <ion-col class="column">
+                <ion-icon center class="mainIcon" name="map"></ion-icon>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+
           <form [formGroup]="slideOneForm">
+
+            <ion-item class="mainTitle">
+              My Intinerary
+            </ion-item>
+
+            <ion-item class="mainText" text-wrap>
+              Enter your booking number to get access to your whole journey, so you don't miss anything
+            </ion-item>
 
             <ion-item>
               <ion-label floating>Full Name</ion-label>
@@ -29,7 +42,7 @@
            <!-- <ion-item>
               <ion-label floating>Country</ion-label>
               <ion-input formControlName="country" type="text" [class.invalid]="!slideOneForm.controls.country.valid && (slideOneForm.controls.bookingnumber.dirty || submitAttempt)"></ion-input>
-            </ion-item> -->
+            </ion-item>
 
             <ion-item>
               <ion-label floating>Country</ion-label>
@@ -39,6 +52,7 @@
                 <ion-option value="private">Canada</ion-option>
               </ion-select>
             </ion-item>
+            -->
 
             <ion-item>
               <ion-label floating>Booking Number</ion-label>
@@ -49,9 +63,16 @@
 
         </ion-list>
 
-        <button ion-button round color="textHighlight" (click)="save()">Continue</button>
-
-      </ion-slide>
-    </ion-slides>
-
+    <ion-grid>
+      <ion-row>
+        <ion-col class="column">
+          <button ion-button outline color="textHighlight" (click)="abrirWheelLugares()">Pickup Location</button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="column">
+          <button ion-button round color="textHighlight" (click)="save()">Continue</button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </ion-content>

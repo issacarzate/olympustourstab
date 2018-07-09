@@ -101,3 +101,10 @@ export interface Tour{
   image:string;
   id?: string;
 }
+export interface Offer{
+  imageLink:string,
+  title:string,
+  subtitle:string,
+  content:string,
+  link:string
+}

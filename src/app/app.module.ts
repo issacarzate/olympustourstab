@@ -17,6 +17,7 @@ import {DestinationsInfoPage} from "../pages/destinations-info/destinations-info
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { UsuarioProvider } from '../providers/usuario/usuario';
+import {ItineraryPage} from "../pages/itinerary/itinerary";
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
@@ -29,6 +30,8 @@ import {InAppBrowser} from "@ionic-native/in-app-browser";
 import {ContactoPage} from "../pages/contacto/contacto";
 import {SocialSharing} from "@ionic-native/social-sharing";
 import {DestinationsPage} from "../pages/destinations/destinations";
+import {CallNumber} from "@ionic-native/call-number";
+import {WheelSelector} from "@ionic-native/wheel-selector";
 //import {YoutubeVideoPlayer} from "@ionic-native/youtube-video-player";
 
 //Providers
@@ -57,7 +60,8 @@ export const firebaseConfig = {
     ContactoPage,
     DestinationsPage,
     DestinationsCitiesPage,
-    DestinationsInfoPage
+    DestinationsInfoPage,
+    ItineraryPage
   ],
   imports: [
     BrowserModule,
@@ -81,7 +85,8 @@ export const firebaseConfig = {
     ContactoPage,
     DestinationsPage,
     DestinationsCitiesPage,
-    DestinationsInfoPage
+    DestinationsInfoPage,
+    ItineraryPage
   ],
   providers: [
     StatusBar,
@@ -93,6 +98,8 @@ export const firebaseConfig = {
     InAppBrowser,
     SocialSharing,
     DestinationsProvider,
+    CallNumber,
+    WheelSelector,
     //YoutubeVideoPlayer,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
