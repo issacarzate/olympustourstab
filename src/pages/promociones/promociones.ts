@@ -28,7 +28,7 @@ export class PromocionesPage {
       imageLink:"https://imagesmx-olympustours1.netdna-ssl.com/thumbnail.php?url=L2dhbGVyaWEvTWFyaW5hcml1bTUuanBn&size=395x205",
       title: "Marinarium Snorkeling",
       subtitle: "La Romana",
-      content: "Marinarium invites you to discover the wonders of the reef and the marine life. Join us for an exciting half-day excursion cruise during which you will have the unique opportunity to snorkel with stingrays and nurse sharks. Snorkeling is followed by a beautiful sightseeing cruise along the coast of Cabeza de Toro and Bavaro. Finally, you will reach Paradise, where you will relax in the waist deep waters of Bavaro’s natural pool, with your favorite cocktail in hand.\n" ,
+      content: "Marinarium invites you to discover the wonders of the reef and the marine life. Join us for an exciting half-day excursion cruise during which you will have the unique opportunity to snorkel with stingrays and nurse sharks." ,
       link: "https://www.olympus-tours.com/tours/la-romana/marinarium-snorkeling-romana"
     }
   ];

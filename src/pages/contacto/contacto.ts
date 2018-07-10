@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {IonicPage, NavController, NavParams} from 'ionic-angular';
-//import {CallNumber} from "@ionic-native/call-number";
+import {CallNumber} from "@ionic-native/call-number";
 import {InAppBrowser, InAppBrowserOptions} from '@ionic-native/in-app-browser';
 
 /**
@@ -21,18 +21,18 @@ export class ContactoPage {
       bandera: "🇵🇹",
       nombre: "Cancun Central",
       numero: "5566778899",
-      whatsapp: "5215517040392"
+      whatsapp: "5219982314488"
     },
     {
       bandera: "🇵🇷",
       nombre: "San Juan",
       numero: "55881122",
-      whatsapp: "5215517040392"
+      whatsapp: "5219982314488"
     }
   ];
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
-             // private callNumber: CallNumber,
+              private callNumber: CallNumber,
               private  iab: InAppBrowser) {
   }
 
@@ -41,9 +41,9 @@ export class ContactoPage {
   }
 
   llamada(numeroLlamada:string){
-    /*this.callNumber.callNumber(numeroLlamada, true)
+    this.callNumber.callNumber(numeroLlamada, true)
       .then(res => console.log('Launched dialer!', res))
-      .catch(err => console.log('Error launching dialer', err));*/
+      .catch(err => console.log('Error launching dialer', err));
     console.log('Archive clicked');
   }
 
