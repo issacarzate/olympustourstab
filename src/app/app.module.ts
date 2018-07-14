@@ -34,6 +34,7 @@ import {SocialSharing} from "@ionic-native/social-sharing";
 import {CallNumber} from "@ionic-native/call-number";
 import {WheelSelector} from "@ionic-native/wheel-selector";
 import {YoutubeVideoPlayer} from "@ionic-native/youtube-video-player";
+import { File } from '@ionic-native/file';
 
 //Providers
 import { DestinationsProvider } from '../providers/destinations/destinations';
@@ -106,6 +107,7 @@ export const firebaseConfig = {
     WheelSelector,
     YoutubeVideoPlayer,
     PhotoViewer,
+    File,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
