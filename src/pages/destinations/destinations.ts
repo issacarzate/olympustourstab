@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {DestinationsProvider, Country } from "../../providers/destinations/destinations";
 import {DestinationsCitiesPage} from "../destinations-cities/destinations-cities";
 import {Observable} from "rxjs/Observable";
+import {ContactoPage} from "../contacto/contacto";
 
 /**
  * Generated class for the DestinationsPage page.
@@ -31,6 +32,9 @@ export class DestinationsPage {
   elegirPais(countryName:string){
     this._destinationsProvider.getDbCities(countryName);
     this.navCtrl.push(DestinationsCitiesPage);
+  }
+  contactar(){
+    this.navCtrl.push(ContactoPage);
   }
 
 }

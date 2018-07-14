@@ -5,19 +5,22 @@ import { IonicStorageModule } from '@ionic/storage';
 
 import { MyApp } from './app.component';
 
-import { AboutPage } from '../pages/about/about';
-import { ContactPage } from '../pages/contact/contact';
+import {ItinerarioRegistroPage} from "../pages/itinerario-registro/itinerario-registro";
+import {PromocionesLoginPage} from "../pages/promociones-login/promociones-login";
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { IntroPage } from '../pages/intro/intro';
+import {ContactoPage} from "../pages/contacto/contacto";
+import {DestinationsPage} from "../pages/destinations/destinations";
 import { PromocionesPage } from '../pages/promociones/promociones';
 import {DestinationsCitiesPage} from "../pages/destinations-cities/destinations-cities";
 import {DestinationsInfoPage} from "../pages/destinations-info/destinations-info";
+import {AirportMapPage} from "../pages/airport-map/airport-map";
+import {ItineraryPage} from "../pages/itinerary/itinerary";
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { UsuarioProvider } from '../providers/usuario/usuario';
-import {ItineraryPage} from "../pages/itinerary/itinerary";
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
@@ -27,9 +30,7 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 //Cordova
 import { Facebook } from '@ionic-native/facebook';
 import {InAppBrowser} from "@ionic-native/in-app-browser";
-import {ContactoPage} from "../pages/contacto/contacto";
 import {SocialSharing} from "@ionic-native/social-sharing";
-import {DestinationsPage} from "../pages/destinations/destinations";
 import {CallNumber} from "@ionic-native/call-number";
 import {WheelSelector} from "@ionic-native/wheel-selector";
 import {YoutubeVideoPlayer} from "@ionic-native/youtube-video-player";
@@ -37,6 +38,7 @@ import {YoutubeVideoPlayer} from "@ionic-native/youtube-video-player";
 //Providers
 import { DestinationsProvider } from '../providers/destinations/destinations';
 import { HttpClientModule } from "@angular/common/http";
+import {PhotoViewer} from "@ionic-native/photo-viewer";
 
 export const firebaseConfig = {
   apiKey: "AIzaSyA2QCVwtr298TPcop6wK0gBShMylWnvWIc",
@@ -51,8 +53,9 @@ export const firebaseConfig = {
 @NgModule({
   declarations: [
     MyApp,
-    AboutPage,
-    ContactPage,
+    AirportMapPage,
+    ItinerarioRegistroPage,
+    PromocionesLoginPage,
     HomePage,
     TabsPage,
     PromocionesPage,
@@ -76,8 +79,9 @@ export const firebaseConfig = {
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    AboutPage,
-    ContactPage,
+    AirportMapPage,
+    ItinerarioRegistroPage,
+    PromocionesLoginPage,
     HomePage,
     TabsPage,
     PromocionesPage,
@@ -101,6 +105,7 @@ export const firebaseConfig = {
     CallNumber,
     WheelSelector,
     YoutubeVideoPlayer,
+    PhotoViewer,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

@@ -3,19 +3,31 @@ import {NavController, ToastController} from 'ionic-angular';
 import {ContactoPage} from "../contacto/contacto";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 
+//Native
 import { AgeValidator } from  '../../validators/age';
 import {WheelSelector} from "@ionic-native/wheel-selector";
 import {ItineraryPage} from "../itinerary/itinerary";
 
+//Providers
+import {Booking, DestinationsProvider} from "../../providers/destinations/destinations";
+
+/**
+ * Generated class for the ItinerarioRegistroPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+
 @Component({
-  selector: 'page-about',
-  templateUrl: 'about.html'
+  selector: 'page-itinerario-registro',
+  templateUrl: 'itinerario-registro.html',
 })
-export class AboutPage {
+export class ItinerarioRegistroPage {
 
   @ViewChild('signupSlider') signupSlider: any;
 
   slideOneForm: FormGroup;
+  userInfo:Booking;
 
   submitAttempt: boolean = false;
 
@@ -24,7 +36,7 @@ export class AboutPage {
       {description: 'Cancun'},
       {description: 'Puerto Vallarta'},
       {description: 'Los Cabos'},
-      {description: 'Mexico City'},
+      {description: 'Ciudad de Mexico'},
       {description: 'Cozumel'},
       {description: 'Liberia, San Jose'},
       {description: 'Punta Cana'}
@@ -33,7 +45,8 @@ export class AboutPage {
 
   constructor(public navCtrl: NavController, public formBuilder: FormBuilder,
               private toastCtrl: ToastController,
-              private selector:WheelSelector) {
+              private selector:WheelSelector,
+              private _userBookingProvider:DestinationsProvider) {
 
     this.slideOneForm = formBuilder.group({
       fullname: ['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*'), Validators.required])],
@@ -55,7 +68,7 @@ export class AboutPage {
     this.submitAttempt = true;
 
     if(!this.slideOneForm.valid){
-     // this.signupSlider.slideTo(0);
+      // this.signupSlider.slideTo(0);
       let toast = this.toastCtrl.create({
         message: 'Complete form data',
         duration: 3000,
@@ -71,7 +84,13 @@ export class AboutPage {
     }
     else {
       console.log("success!");
-      console.log(this.slideOneForm.value);
+      //console.log(this.slideOneForm.value);
+      this.userInfo = this.slideOneForm.value;
+      console.log(this.userInfo);
+      this._userBookingProvider.addUserBookingService(this.userInfo);
+      console.log(this.userInfo.fullname);
+
+      //this._userBookingProvider.addUserBooking(this.slideOneForm.value);
       this.navCtrl.push(ItineraryPage);
     }
   }
@@ -97,4 +116,8 @@ export class AboutPage {
       toast.present();
     });
   }
+  contactar(){
+    this.navCtrl.push(ContactoPage);
+  }
+
 }

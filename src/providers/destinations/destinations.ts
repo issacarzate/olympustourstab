@@ -16,28 +16,10 @@ export class DestinationsProvider {
   countriesCollection: AngularFirestoreCollection<Country>;
   citiesCollection: AngularFirestoreCollection<City>;
   toursCollection: AngularFirestoreCollection<Tour>;
-  //country: Observable<Country[]>;
 
-  //private country:Country[] = [];
-  /*private countries:Country[]=[
-    {
-    name: 'Mexico',
-    image: 'assets/tours/card-amsterdam.png',
-    cities:['Cancun', 'Playa del Camren', 'Los Cabos']
-    },
-    {
-      name: 'Costa Rica',
-      image: 'assets/tours/card-sf.png',
-      cities:['San Jose', 'Monteverde', 'La Fortuna']
-    },
-    {
-      name: 'Panama',
-      image: 'assets/tours/card-madison.png',
-      cities:['Colon', 'San Blas', 'Panama']
-    },
-  ];*/
+  userBooking:Booking;
 
-//  constructor(private afs:AngularFirestore) {
+
   constructor(private afs:AngularFirestore) {
 
     this.countriesCollection = this.afs.collection('countriesColleciton');
@@ -54,7 +36,6 @@ export class DestinationsProvider {
     }).catch((error)=>{
       console.log(error);
     });*/
-    console.log('cargado totalmente');
   }
 
   getCountry(index:number){
@@ -67,14 +48,12 @@ export class DestinationsProvider {
    // this.countries = this.countriesCollection.valueChanges(); //Observable de los datos
     //return this.countries
   }
-  getDbTours(coutryName:string){
+  getDbTours(coutryName:string) {
     this.toursCollection = this.afs.collection('Tours', ref => ref.where('city', '==', coutryName));
   }
-  getCountries(){
-    //return this.countries;
-  }
-  addCountry(country:Country){
-    //this.country.push(country);
+
+  addUserBookingService(usrBooking:Booking){
+    this.userBooking = usrBooking;
   }
 
 }
@@ -107,4 +86,9 @@ export interface Offer{
   subtitle:string,
   content:string,
   link:string
+}
+export interface Booking{
+  fullname:string,
+  country:string[],
+  bookingnumber:string
 }

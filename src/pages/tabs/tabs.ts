@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
-import { AboutPage } from '../about/about';
-import { ContactPage } from '../contact/contact';
+import {ItinerarioRegistroPage} from "../itinerario-registro/itinerario-registro";
+import {PromocionesLoginPage} from "../promociones-login/promociones-login";
 import { IntroPage } from '../intro/intro';
 import { HomePage } from '../home/home';
 
 import { Storage } from '@ionic/storage';
 import {DestinationsPage} from "../destinations/destinations";
+//import {ItineraryPage} from "../itinerary/itinerary";
 
 
 @Component({
@@ -15,9 +16,9 @@ import {DestinationsPage} from "../destinations/destinations";
 })
 export class TabsPage {
 
-  intinerario = AboutPage ;
+  intinerario = ItinerarioRegistroPage ;
   tours = HomePage;
-  promociones = ContactPage;
+  promociones = PromocionesLoginPage;
   destinos = DestinationsPage;
 
   color: string = "primary";
