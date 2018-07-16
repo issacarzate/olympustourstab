@@ -5,6 +5,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 //Native
 import {PhotoViewer} from "@ionic-native/photo-viewer";
 import {DestinationsProvider} from "../../providers/destinations/destinations";
+import { File } from '@ionic-native/file';
 
 
 /**
@@ -21,12 +22,15 @@ import {DestinationsProvider} from "../../providers/destinations/destinations";
 })
 export class ItineraryPage {
   mapSrc:string = '';
-  path:string='../assets/maps/';
+  path:string='www/assets/maps/';
+
+  cordova: any;
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               private _userBookingService:DestinationsProvider,
-              private photoViewer: PhotoViewer) {
+              private photoViewer: PhotoViewer,
+              private file: File) {
   }
 
   ionViewDidLoad() {
@@ -43,7 +47,8 @@ export class ItineraryPage {
     switch(this._userBookingService.userBooking.country['description']) {
       case 'Cancun': {
         this.mapSrc = this.path + 'cancun_map.jpg';
-        this.photoViewer.show(this.mapSrc);
+        console.log(this.cordova.file.applicationDirectory + this.mapSrc);
+        this.photoViewer.show(this.cordova.file.applicationDirectory + this.mapSrc);
         console.log(this.mapSrc);
         break;
       }

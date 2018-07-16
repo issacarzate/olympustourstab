@@ -97,7 +97,7 @@
     <plugin name="cordova-wheel-selector-plugin" spec="^1.1.1" />
     <allow-navigation href="http://192.168.100.10:8100" />
     <plugin name="com-sarriaroman-photoviewer" spec="~1.1.18" />
+    <plugin name="cordova-plugin-file" spec="^6.0.1" />
     <engine name="ios" spec="4.5.4" />
     <engine name="android" spec="6.4.0" />
-    <plugin name="cordova-plugin-file" spec="^6.0.1" />
 </widget>

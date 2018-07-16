@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {Offer} from "../../providers/destinations/destinations";
 import {InAppBrowser, InAppBrowserOptions} from "@ionic-native/in-app-browser";
+import {AngularFireAuth} from "angularfire2/auth";
+import {PromocionesLoginPage} from "../promociones-login/promociones-login";
 
 /**
  * Generated class for the PromocionesPage page.
@@ -33,7 +35,9 @@ export class PromocionesPage {
     }
   ];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private iab: InAppBrowser) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+              private iab: InAppBrowser,
+              private afAuth: AngularFireAuth) {
   }
 
   ionViewDidLoad() {
@@ -47,6 +51,11 @@ export class PromocionesPage {
 
     //Abrir la url
     this.iab.create(linkToOffer, '_blank', options);
+  }
+
+  signOut() {
+    this.afAuth.auth.signOut();
+    this.navCtrl.setRoot(PromocionesLoginPage);
   }
 
 }

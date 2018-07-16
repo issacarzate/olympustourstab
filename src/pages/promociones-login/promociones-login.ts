@@ -24,6 +24,9 @@ import {CallNumber} from "@ionic-native/call-number";
   templateUrl: 'promociones-login.html',
 })
 export class PromocionesLoginPage {
+
+
+
   constructor(public navCtrl: NavController, public navParams: NavParams,
               private afAuth: AngularFireAuth,
               public storage: Storage,
@@ -31,9 +34,17 @@ export class PromocionesLoginPage {
               public actionSheetCtrl: ActionSheetController,
               public usuarioProv: UsuarioProvider, private fb: Facebook, private platform: Platform) {
 
+
+
   }
 
   ionViewDidLoad(){
+    var user = firebase.auth().currentUser;
+    if (user) {
+      // User is signed in.
+      this.navCtrl.setRoot(PromocionesPage);
+    }
+
     this.storage.get('intro-done').then(done => {
       if (!done) {
         this.storage.set('intro-done', true);
@@ -73,7 +84,7 @@ export class PromocionesLoginPage {
             'facebook'
           );
 
-          this.navCtrl.push(PromocionesPage);
+          this.navCtrl.setRoot(PromocionesPage);
 
         });
     }
