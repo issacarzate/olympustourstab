@@ -40,6 +40,7 @@ import { File } from '@ionic-native/file';
 import { DestinationsProvider } from '../providers/destinations/destinations';
 import { HttpClientModule } from "@angular/common/http";
 import {PhotoViewer} from "@ionic-native/photo-viewer";
+import { GeofenceProvider } from '../providers/geofence/geofence';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyA2QCVwtr298TPcop6wK0gBShMylWnvWIc",
@@ -108,7 +109,8 @@ export const firebaseConfig = {
     YoutubeVideoPlayer,
     PhotoViewer,
     File,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    GeofenceProvider
   ]
 })
 export class AppModule {}
