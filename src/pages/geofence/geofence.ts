@@ -1,21 +1,32 @@
-import { Component, ViewChild, ElementRef } from '@angular/core';
+import { Component } from '@angular/core';
 import { NavController, Platform } from 'ionic-angular';
+
+
+//Native
+//import { Geofence } from '@ionic-native/geofence';
+
 /**
  * Generated class for the GeofencePage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-declare var google;
-let map: any;
 
 @Component({
   selector: 'page-geofence',
   templateUrl: 'geofence.html',
 })
 export class GeofencePage {
-  @ViewChild('map') mapElement: ElementRef;
-  constructor(public navCtrl: NavController, public platform: Platform) {
+  constructor(public navCtrl: NavController,
+              public platform: Platform,
+              //private geofence: Geofence
+              ) {
+  }
+
+    /*geofence.initialize().then(
+      () => console.log('Geofence Plugin Ready'),
+      (err) => console.log(err)
+    )
 
     platform.ready().then(() => {
       this.getPlaces();
@@ -25,6 +36,27 @@ export class GeofencePage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad GeofencePage');
+  }
+
+  private addGeofence(id, idx, lat, lng, place, desc) {
+    let fence = {
+      id: id,
+      latitude: lat,
+      longitude: lng,
+      radius: 50,
+      transitionType: 3,
+      notification: {
+        id: idx,
+        title: 'You crossed ' + place,
+        text: desc,
+        openAppOnClick: true
+      }
+    }
+
+    this.geofence.addOrUpdate(fence).then(
+      () => console.log('Geofence added'),
+      (err) => console.log('Geofence failed to add')
+    );
   }
 
   getPlaces() {
@@ -37,13 +69,14 @@ export class GeofencePage {
       location: {lat: -6.854359, lng: 107.598455},
       radius: 500,
       type: ['restaurant']
-    }, (results,status) => {
+    }, (results, status) => {
       if (status === google.maps.places.PlacesServiceStatus.OK) {
         for (var i = 0; i < results.length; i++) {
-          console.log(results[i]);
+          this.addGeofence(results[i].id, i+1, results[i].geometry.location.lat(), results[i].geometry.location.lng(), results[i].name, results[i].vicinity);
         }
       }
     });
-  }
+  }*/
+
 
 }

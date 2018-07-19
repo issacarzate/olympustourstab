@@ -35,6 +35,8 @@ import {CallNumber} from "@ionic-native/call-number";
 import {WheelSelector} from "@ionic-native/wheel-selector";
 import {YoutubeVideoPlayer} from "@ionic-native/youtube-video-player";
 import { File } from '@ionic-native/file';
+//import { Geofence } from '@ionic-native/geofence';
+
 
 //Providers
 import { DestinationsProvider } from '../providers/destinations/destinations';
@@ -109,6 +111,7 @@ export const firebaseConfig = {
     YoutubeVideoPlayer,
     PhotoViewer,
     File,
+  //  Geofence,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     GeofenceProvider
   ]
